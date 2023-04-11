@@ -1,12 +1,12 @@
 import altair as alt
 import pandas as pd
 
-source = pd.DataFrame.from_records(
-    [{'a': 1, 'b': 1, 'image': 'https://altair-viz.github.io/_static/altair-logo-light.png'},
-     {'a': 2, 'b': 2, 'image': 'https://avatars.githubusercontent.com/u/11796929?s=200&v=4'}]
-)
-alt.Chart(source).mark_circle(size=200).encode(
+source = pd.DataFrame({
+    'a': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
+    'b': [28, 55, 43, 91, 81, 53, 19, 87, 52]
+})
+
+alt.Chart(source).mark_bar().encode(
     x='a',
-    y='b',
-    tooltip=['image']  # Must be a list containing a field called "image"
+    y='b'
 )
