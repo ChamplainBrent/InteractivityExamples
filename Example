@@ -1,0 +1,19 @@
+click = alt.selection_point(encodings=['color'])
+
+scatter = alt.Chart(cars).mark_point().encode(
+    x='Horsepower:Q',
+    y='Miles_per_Gallon:Q',
+    color='Origin:N'
+).transform_filter(
+    click
+)
+
+hist = alt.Chart(cars).mark_bar().encode(
+    x='count()',
+    y='Origin',
+    color=alt.condition(click, 'Origin', alt.value('lightgray'))
+).add_params(
+    click
+)
+
+scatter & hist
