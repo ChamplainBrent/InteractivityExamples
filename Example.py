@@ -11,4 +11,4 @@ c = alt.Chart(source).mark_bar().encode(
     y='b'
 )
 
-st.altair_chart(c, use_container_width=True
+st.altair_chart(c, use_container_width=True)
