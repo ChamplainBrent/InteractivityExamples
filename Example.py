@@ -23,4 +23,4 @@ line = alt.Chart().mark_rule(color='firebrick').encode(
 
 c = alt.layer(bars, line, data=source)
 
-st.altair_chart(c, use_container_width=True
+st.altair_chart(c, use_container_width=True)
